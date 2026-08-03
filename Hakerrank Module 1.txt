@@ -1,0 +1,52 @@
+//Hello World
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+
+
+//
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+//Input,Output
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << a + b + c << endl;
+
+    return 0;
+}
+
+
+
+//Data types
+
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    int i;
+    long l;
+    char c;
+    float f;
+    double d;
+                        
+    if (scanf("%d %ld %c %f %lf", &i, &l, &c, &f, &d) == 5) {
+    printf("%d\n", i);
+    printf("%ld\n", l);
+    printf("%c\n", c);
+    printf("%.3f\n", f);
+    printf("%.9lf\n", d);}
+    return 0;
+}

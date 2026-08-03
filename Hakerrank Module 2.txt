@@ -1,0 +1,95 @@
+//decsion making
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string ltrim(const string &);
+string rtrim(const string &);
+
+
+
+int main()
+{
+    string n_temp;
+    getline(cin, n_temp);
+
+    int n = stoi(ltrim(rtrim(n_temp)));
+
+    cin >> n;
+    vector<string> words = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+                
+     if (n >= 1 && n <= 9) {
+     cout << words[n] << endl;
+     } 
+     else if (n > 9) {
+     cout << "Greater than 9" << endl;}
+    return 0;
+}
+
+string ltrim(const string &str) {
+    string s(str);
+    s.erase(
+        s.begin(),
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
+
+    return s;
+}
+
+string rtrim(const string &str) {
+    string s(str);
+
+    s.erase(
+        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
+        s.end());
+
+    return s;
+}
+
+//Looping
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    int a, b;
+        cin >> a >> b;
+        string words[] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+        for (int n = a; n <= b; n++) {
+        if (n >= 1 && n <= 9) {
+        cout << words[n] << "\n";
+        } else if (n % 2 == 0) {
+        cout << "even\n";
+        } else {
+        cout << "odd\n";
+        }
+        }
+    return 0;
+}
+
+
+//Functions
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+
+
+int max_of_four(int a, int b, int c, int d) {
+        return max({a, b, c, d});
+}
+
+int main() {
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+    int ans = max_of_four(a, b, c, d);
+    printf("%d", ans);
+    
+    return 0;
+}
+
+
+
+
+
+
