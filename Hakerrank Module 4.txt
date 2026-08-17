@@ -1,0 +1,161 @@
+#include <iostream>
+#include <sstream>
+using namespace std;
+
+/*
+Enter code for class Student here.
+Read statement for specification.
+*/
+class Student {
+    private:
+        int age;
+            string first_name;
+                string last_name;
+                    int standard;
+                    
+                    public:
+void set_age(int a) {
+age = a;
+}
+int get_age() {
+return age;
+}
+                                                    
+void set_first_name(string fn) {
+first_name = fn;
+                                                                    }
+string get_first_name() {
+return first_name;
+                                                                                    }
+                                                                                    
+void set_last_name(string ln) {
+                                                                                                last_name = ln;
+}string get_last_name() {
+return last_name;
+}
+void set_standard(int s) {
+               standard = s;
+}
+int get_standard() {
+return standard;
+                                                                                                                                                    }
+                                                                                                                                                    
+string to_string() {
+stringstream ss;
+ss << age << "," << first_name << "," << last_name << "," << standard;return ss.str();
+                                                                                                                                                                                    }
+                                                                                                                                                                                    };
+                                                                                                                                                                                    
+
+
+int main() {
+    int age, standard;
+    string first_name, last_name;
+    
+    cin >> age >> first_name >> last_name >> standard;
+    
+    Student st;
+    st.set_age(age);
+    st.set_standard(standard);
+    st.set_first_name(first_name);
+    st.set_last_name(last_name);
+    
+    cout << st.get_age() << "\n";
+    cout << st.get_last_name() << ", " << st.get_first_name() << "\n";
+    cout << st.get_standard() << "\n";
+    cout << "\n";
+    cout << st.to_string();
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <cassert>
+using namespace std;
+#include <iostream>
+#include <numeric>
+
+class Student {
+private:
+    int scores[5];
+    
+    public:
+        void input() {
+for (int i = 0; i < 5; ++i) {
+std::cin >> scores[i];
+}
+                                        }
+                                        
+int calculateTotalScore() {
+int total = 0;
+for (int i = 0; i < 5; ++i) {
+total += scores[i];
+}
+return total;
+}
+                                                                                            };
+                                                                                            
+// Write your Student class here
+
+int main() {
+    int n; // number of students
+    cin >> n;
+    Student *s = new Student[n]; // an array of n students
+    
+    for(int i = 0; i < n; i++){
+        s[i].input();
+    }
+
+    // calculate kristen's score
+    int kristen_score = s[0].calculateTotalScore();
+
+    // determine how many students scored higher than kristen
+    int count = 0; 
+    for(int i = 1; i < n; i++){
+        int total = s[i].calculateTotalScore();
+        if(total > kristen_score){
+            count++;
+        }
+    }
+
+    // print result
+    cout << count;
+    
+    return 0;
+}
+
